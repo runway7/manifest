@@ -2,6 +2,7 @@
 
 class Post < ApplicationRecord
   before_save :extract
+  validates_presence_of :title
 
   private
 
@@ -18,12 +19,12 @@ class Post < ApplicationRecord
 
   class PygmentedHTML < Redcarpet::Render::HTML
     def block_code(code, language)
-      Pygments.highlight(code, lexer: language, options: { encoding: 'utf-8' })
+      Pygments.highlight(code, lexer: language, options: {encoding: 'utf-8'})
     end
   end
 
   def render_content(content)
-    markdown = Redcarpet::Markdown.new(PygmentedHTML.new(render_options: { with_toc_data: true }),
+    markdown = Redcarpet::Markdown.new(PygmentedHTML.new(render_options: {with_toc_data: true}),
                                        autolink: true, no_intra_emphasis: true, fenced_code_blocks: true, lax_spacing: true)
     markdown.render(content).html_safe
   end
