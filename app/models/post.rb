@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Post < ApplicationRecord
-  before_save :extract
+  before_validation :extract
   validates_presence_of :title
 
   private
@@ -11,10 +11,10 @@ class Post < ApplicationRecord
     front_matter = parsed_matter.front_matter
     self.title = front_matter['title']
     self.url = front_matter['url']
-    self.aliases = front_matter['aliases']
-    self.tags = front_matter['tags']
+    self.aliases = front_matter['aliases'].to_a
+    self.tags = front_matter['tags'].to_a
     self.html = render_content parsed_matter.content
-    self.published = front_matter['published']
+    self.published = !!front_matter['published']
   end
 
   class PygmentedHTML < Redcarpet::Render::HTML
