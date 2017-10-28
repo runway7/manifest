@@ -124,10 +124,23 @@ h6 {
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
-  &:hover {
-    text-decoration: underline;
+  @extend .link;
+  @extend .black;
+  @extend .bg-animate;
+  @extend .hover-bg-light-gray;
+}
+
+a.article {
+  @extend .db;
+  @extend .hover-bg-white;
+  @extend .mv4;
+  @extend .ph3;
+  h3 {
+    @extend .ph0;
+    @extend .di;
+    @extend .bg-animate;
+    @extend .hover-bg-light-gray;
+
   }
 }
 
@@ -140,4 +153,18 @@ ul {
   @extend .pl4;
   @extend .pr3;
   @extend .pr0-ns;
+}
+
+#content {
+  a {
+    @extend .underline;
+  }
+}
+
+.filter {
+  @extend .black-50;
+  .tag {
+    @extend .black-80;
+    @extend .bg-light-gray;
+  }
 }

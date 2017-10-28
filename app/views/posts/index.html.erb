@@ -1,4 +1,7 @@
 <h1><a href="/">Hangar</a> / Runway 7</h1>
+<%unless @tags.empty?%>
+<h4 class="filter">Showing articles tagged with <span class="tag"><%=@tags.join(', ')%></span> / <a href="/">show all</a></h4>
+<%end%>
 <%@posts.each do |post|%>
-  <a href="<%=post.url%>"><h3><%=post.title%></h3></a>
+  <a class="article" href="<%=post.url%>"><h3><%=post.title%></h3></a>
 <%end%>
