@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+require 'zip'
 namespace :pull do
   task zip: [:environment] do
     REPO = ENV.fetch('REPO') { 'runway7/hangar' }
