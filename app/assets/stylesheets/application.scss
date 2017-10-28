@@ -57,9 +57,12 @@ pre {
 
 ul.tags {
   @extend .list;
-  @extend .pv1;
   @extend .ph3;
+  @extend .pv4;
+  @extend .mv4;
   @extend .ph0-ns;
+  @extend .bt;
+  @extend .b--black-10;
   li {
     @extend .dib;
     @extend .mr1;
