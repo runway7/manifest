@@ -97,7 +97,8 @@ blockquote {
 }
 
 h1 {
-  @extend .f1;
+  @extend .f3;
+  @extend .f1-ns;
   @extend .lh-title;
 }
 
@@ -107,7 +108,8 @@ h2 {
 }
 
 h3 {
-  @extend .f3;
+  @extend .f5;
+  @extend .f3-ns;
   @extend .lh-copy;
 }
 
@@ -136,7 +138,7 @@ a {
 a.article {
   @extend .db;
   @extend .hover-bg-white;
-  @extend .mv4;
+  @extend .mv4;  
   @extend .ph3;
   h3 {
     @extend .ph0;
