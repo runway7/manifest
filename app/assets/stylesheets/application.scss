@@ -45,6 +45,14 @@ pre {
   @extend .pa3;
   @extend .bg-near-white;
   @extend .lh-title;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media #{$breakpoint-not-small} {
+  pre {
+    overflow-x: auto;
+  }
 }
 
 ul.tags {
