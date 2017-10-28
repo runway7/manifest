@@ -2,8 +2,8 @@
 
 namespace :pull do
   task zip: [:environment] do
-    REPO = 'runway7/hangar'
-    BRANCH = 'frontmatter'
+    REPO = ENV.fetch('REPO') { 'runway7/hangar' }
+    BRANCH = ENV.fetch('BRANCH') { 'frontmatter' }
     zip_stream = StringIO.new(HTTParty.get("https://codeload.github.com/#{REPO}/zip/#{BRANCH}").body)
     Post.transaction do
       Post.delete_all
