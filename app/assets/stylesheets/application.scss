@@ -37,8 +37,10 @@ p {
 
 pre {
   @extend .pre;
-  @extend .br2;
-  @extend .ba;
+  @extend .br2-ns;
+  @extend .bt;
+  @extend .bb;
+  @extend .ba-ns;
   @extend .b--black-05;
   @extend .pa3;
   @extend .bg-near-white;
@@ -47,8 +49,9 @@ pre {
 
 ul.tags {
   @extend .list;
-  @extend .ph0;
   @extend .pv1;
+  @extend .ph3;
+  @extend .ph0-ns;
   li {
     @extend .dib;
     @extend .mr1;
@@ -61,6 +64,7 @@ ul.tags {
       @extend .pa2;
       @extend .link;
       @extend .dim;
+      @extend .br2;
       @extend .dark-gray;
       @extend .ba;
       @extend .b--black-20;
@@ -117,4 +121,9 @@ a {
   &:hover {
     text-decoration: underline;
   }
+}
+
+h1, h2, h3, h4, h5, h6, p, ul {
+  @extend .ph3;
+  @extend .ph0-ns;
 }
