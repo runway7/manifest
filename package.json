@@ -1,5 +1,7 @@
 {
   "name": "manifest",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "tachyons-sass": "^4.8.1"
+  }
 }

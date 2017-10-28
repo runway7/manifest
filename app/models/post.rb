@@ -10,7 +10,7 @@ class Post < ApplicationRecord
     parsed_matter = FrontMatterParser::Parser.new(:md).call(raw)
     front_matter = parsed_matter.front_matter
     self.title = front_matter['title']
-    self.url = front_matter['url']
+    self.url = front_matter['url'].to_s.split('/').reject(&:blank?).join('/')
     self.aliases = front_matter['aliases'].to_a
     self.tags = front_matter['tags'].to_a
     self.html = render_content parsed_matter.content
@@ -19,12 +19,12 @@ class Post < ApplicationRecord
 
   class PygmentedHTML < Redcarpet::Render::HTML
     def block_code(code, language)
-      Pygments.highlight(code, lexer: language, options: {encoding: 'utf-8'})
+      Pygments.highlight(code, lexer: language, options: { encoding: 'utf-8' })
     end
   end
 
   def render_content(content)
-    markdown = Redcarpet::Markdown.new(PygmentedHTML.new(render_options: {with_toc_data: true}),
+    markdown = Redcarpet::Markdown.new(PygmentedHTML.new(render_options: { with_toc_data: true }),
                                        autolink: true, no_intra_emphasis: true, fenced_code_blocks: true, lax_spacing: true)
     markdown.render(content).html_safe
   end

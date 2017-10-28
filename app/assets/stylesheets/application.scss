@@ -1,0 +1,120 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "tachyons-sass/tachyons";
+@import "highlight";
+
+body {
+  @extend .sans-serif;
+  @extend .measure-wide;
+  margin: auto;
+}
+
+code {
+  @extend .f6;
+  @extend .lh-copy;
+  @extend .bg-near-white;
+  @extend .ph1;
+}
+
+p {
+  @extend .f5;
+  @extend .lh-copy;
+}
+
+pre {
+  @extend .pre;
+  @extend .br2;
+  @extend .ba;
+  @extend .b--black-05;
+  @extend .pa3;
+  @extend .bg-near-white;
+  @extend .lh-title;
+}
+
+ul.tags {
+  @extend .list;
+  @extend .ph0;
+  @extend .pv1;
+  li {
+    @extend .dib;
+    @extend .mr1;
+    @extend .mb2;
+    a {
+      @extend .f6;
+      @extend .f5-ns;
+      @extend .b;
+      @extend .db;
+      @extend .pa2;
+      @extend .link;
+      @extend .dim;
+      @extend .dark-gray;
+      @extend .ba;
+      @extend .b--black-20;
+    }
+  }
+
+}
+
+p, li {
+  @extend .lh-copy;
+}
+
+blockquote {
+  @extend .bl;
+  @extend .bw2;
+  @extend .i;
+  @extend .pa3;
+  @extend .b--black-05;
+}
+
+h1 {
+  @extend .f1;
+  @extend .lh-title;
+}
+
+h2 {
+  @extend .f2;
+  @extend .lh-copy;
+}
+
+h3 {
+  @extend .f3;
+  @extend .lh-copy;
+}
+
+h4 {
+  @extend .f4;
+  @extend .lh-copy;
+}
+
+h5 {
+  @extend .f5;
+  @extend .lh-copy;
+}
+
+h6 {
+  @extend .f6;
+  @extend .lh-copy;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    text-decoration: underline;
+  }
+}

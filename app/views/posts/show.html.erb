@@ -1,0 +1,13 @@
+<h3><a href="/">Hangar</a> / Runway 7</h3>
+<a href="/<%=@post.url%>"><h1><%=@post.title%></h1></a>
+<ul class="tags">
+  <%@post.tags.each do |tag|%>
+  <li><a href="<%=root_path(tags: [tag])%>"><%=tag%></a></li>
+  <%end%>
+</ul>
+<div><%=@post.html.html_safe%></div>
+<ul class="tags">
+  <%@post.tags.each do |tag|%>
+  <li><a href="<%=root_path(tags: [tag])%>"><%=tag%></a></li>
+  <%end%>
+</ul>
