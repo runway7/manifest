@@ -131,7 +131,13 @@ a {
   }
 }
 
-h1, h2, h3, h4, h5, h6, p, ul {
+h1, h2, h3, h4, h5, h6, p{
   @extend .ph3;
   @extend .ph0-ns;
+}
+
+ul {
+  @extend .pl4;
+  @extend .pr3;
+  @extend .pr0-ns;
 }
